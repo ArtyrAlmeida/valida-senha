@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#container {
+    display: flex;
+}
+
+.half-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    min-height: 100vh;
+}
+
+#info-section {
+    background-color: #f0f0f0;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+#info-container {
+    height: 40%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: .5em;
+}
+
+ul li {
+    list-style: square;
+    line-height: 40px;
+    text-align: justify;
+    color: #3f3f3f;
+}
+
+h1 {
+    color: #2b2d42;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+#submit-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#password-input {
+    border: 2px solid #adadad;
+    font-size: 1em;
+    padding: 1em;
+    width: 20em;
+    height: 2em;
+    border-radius: 20px;
+    outline: none;
+    transition: linear 500ms;
+    
+}
+
+#password-input:focus {
+    border: 2px solid #2b2d42;
+    transition: linear 500ms;
+}
+
+#submit-button {
+    background-color: #2b2d42;
+    border: solid #adadad 2px;
+    border-radius: 50px;
+    color: #adadad;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: .7em;
+    transition: linear 500ms;
+}
+
+#submit-button:hover {
+    background-color: #adadad;
+    border: solid #2b2d42 2px;
+    color: #2b2d42;
+    transition: linear 500ms;
+
+}
+
+#image-section {
+    background-color: #2b2d42;
+}
