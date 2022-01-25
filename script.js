@@ -1,8 +1,10 @@
 const botao = document.querySelector('#submit-button'),
-      input = document.querySelector('#password-input');
+      input = document.querySelector('#password-input'),
+      resultado = document.querySelector('#validation');
 
 botao.addEventListener('click', () => {
     let valor = input.value;
+    resultado.style.display = "block";
     console.log(validaComplexidade(valor));
 })
 
@@ -62,7 +64,7 @@ function validaComplexidade(valor) {
     //Verificando acentuação, pontuação e espaço
     const especiais = () => {
         let i;
-        //Verificando pontos e espaço
+        //Verificando pontos
         let pontoEspaco = false;
         for(i = 0; i < valor.length; i++) {
             if((valor.charCodeAt(i) >= 20 && valor.charCodeAt(i) <= 47) || (valor.charCodeAt(i) >= 58 && valor.charCodeAt(i) <= 64)){
@@ -75,7 +77,7 @@ function validaComplexidade(valor) {
         let acento = false;
         for(i = 0; i < valor.length; i++) {
             if((valor.charCodeAt(i) >= 91 && valor.charCodeAt(i) <= 96) || (valor.charCodeAt(i) >= 123 && valor.charCodeAt(i) <= 255)){
-                pontoEspaco = true;
+                acento = true;
                 break;
             }
         }
@@ -88,10 +90,14 @@ function validaComplexidade(valor) {
         }
     }
 
-    if(tamanho() == true && caracteres() == true && especiais() == true) {
+    if((tamanho() == true) && (caracteres() == true) && (especiais() == true)) {
+        resultado.textContent = "SENHA VÁLIDA";
+        resultado.style.color = "green";
         return true;
     }
     else {
+        resultado.textContent = "SENHA INVÁLIDA";
+        resultado.style.color = "red";
         return false;
     }
 
