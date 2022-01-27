@@ -53,12 +53,7 @@ function validaComplexidade(valor) {
             }
         }
 
-        if(uppercase == true && lowercase == true && numero == true) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return uppercase && lowercase && numero;
     }
 
     //Verificando acentuação, pontuação e espaço
@@ -90,7 +85,7 @@ function validaComplexidade(valor) {
         }
     }
 
-    if((tamanho() == true) && (caracteres() == true) && (especiais() == true)) {
+    if(tamanho() && caracteres() && especiais()) {
         resultado.textContent = "SENHA VÁLIDA";
         resultado.style.color = "green";
         return true;
@@ -100,6 +95,5 @@ function validaComplexidade(valor) {
         resultado.style.color = "red";
         return false;
     }
-
-
+    
 }
